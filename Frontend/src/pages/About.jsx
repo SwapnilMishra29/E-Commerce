@@ -6,35 +6,86 @@ import NewsLetterBox from '../components/NewsLetterBox'
 const About = () => {
   return (
     <div>
-      <div className='text-2xl text-center pt-8 border-t'>
-        <Title text1={"ABOUT"} text2={'US'} />
+
+      {/* PAGE TITLE */}
+      <div className='text-2xl text-center pt-10 border-t'>
+        <Title text1={'ABOUT'} text2={'US'} />
       </div>
-      <div className='my-10 flex flex-col md:flex-row gap-16'>
-        <img className='w-full md:max-w-[450px]' src={assets.about_img} alt="" />
-        <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600'>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ad perferendis itaque fugiat ullam, eaque vero neque debitis molestias magni recusandae numquam eveniet, quasi aut a minus iste ipsam? Id.</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque, a dicta? Error voluptatem, doloribus id, aut, consequatur sapiente alias asperiores qui commodi iste quod excepturi harum quo quia consequuntur iure?</p>
-        <b className='text-gray-800'>Our Mission</b>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, mollitia hic? Repellendus corrupti quasi ipsa reprehenderit, quidem aspernatur nulla voluptatibus reiciendis totam illo natus ipsam inventore molestias rem sed id?</p>
+
+      {/* ABOUT SECTION */}
+      <div className='my-16 flex flex-col md:flex-row items-center gap-16'>
+        <img
+          className='w-full md:max-w-[450px] rounded-lg shadow-md'
+          src={assets.about_img}
+          alt="About our store"
+        />
+
+        <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600 leading-relaxed'>
+          <p>
+            We are a modern e-commerce platform built to make online shopping
+            simple, reliable, and enjoyable. From everyday essentials to
+            carefully curated fashion pieces, we focus on delivering quality
+            products at fair prices.
+          </p>
+
+          <p>
+            Our journey started with a single goal — to bridge the gap between
+            great products and great customer experience. We work closely with
+            trusted suppliers and brands to ensure every item meets our quality
+            standards before reaching you.
+          </p>
+
+          <div>
+            <b className='text-gray-800 text-lg'>Our Mission</b>
+            <p className='mt-2'>
+              To empower customers with a seamless shopping experience by
+              combining quality products, transparent pricing, and dependable
+              service — all in one place.
+            </p>
+          </div>
         </div>
       </div>
-      <div className='text-4-xl py-4'>
+
+      {/* WHY CHOOSE US */}
+      <div className='text-center mb-12'>
         <Title text1={'WHY'} text2={'CHOOSE US'} />
       </div>
-      <div className='flex flex-col md:flex-row text-sm mb-20'>
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Quality Assurance:</b>
-          <p className='text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam illo enim quos nam quas earum, non quod eos in facere ipsa libero dolore, esse natus. Neque saepe minus repudiandae iusto?</p>
+
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-24'>
+
+        {/* CARD 1 */}
+        <div className='border rounded-lg px-8 py-12 flex flex-col gap-4 hover:shadow-lg transition'>
+          <b className='text-lg'>Quality Assurance</b>
+          <p className='text-gray-600'>
+            Every product listed on our platform goes through strict quality
+            checks. We partner only with reliable sellers to ensure durability,
+            authenticity, and value for money.
+          </p>
         </div>
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Convenience:</b>
-          <p className='text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam illo enim quos nam quas earum, non quod eos in facere ipsa libero dolore, esse natus. Neque saepe minus repudiandae iusto?</p>
+
+        {/* CARD 2 */}
+        <div className='border rounded-lg px-8 py-12 flex flex-col gap-4 hover:shadow-lg transition'>
+          <b className='text-lg'>Convenience & Speed</b>
+          <p className='text-gray-600'>
+            From easy browsing to secure checkout, we’ve designed our platform
+            for speed and simplicity. Track orders, manage returns, and shop
+            anytime, anywhere.
+          </p>
         </div>
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Exceptional Customer Service:</b>
-          <p className='text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam illo enim quos nam quas earum, non quod eos in facere ipsa libero dolore, esse natus. Neque saepe minus repudiandae iusto?</p>
+
+        {/* CARD 3 */}
+        <div className='border rounded-lg px-8 py-12 flex flex-col gap-4 hover:shadow-lg transition'>
+          <b className='text-lg'>Customer-First Support</b>
+          <p className='text-gray-600'>
+            Our support team is always ready to help. Whether it’s an order
+            query, a return, or a product question — your satisfaction comes
+            first.
+          </p>
         </div>
+
       </div>
+
+      {/* NEWSLETTER */}
       <NewsLetterBox />
     </div>
   )

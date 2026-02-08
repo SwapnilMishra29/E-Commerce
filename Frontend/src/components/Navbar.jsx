@@ -18,7 +18,10 @@ const Navbar = () => {
   const Navigate = useNavigate();
 
   return (
-    <div className='flex w-full items-center justify-between py-5 font-medium '>
+   <div className='sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm flex w-full items-center justify-between py-5 font-medium'>
+
+
+
       <Link to='/'>
        <img src={assets.logo} className='w-36' alt="" />
       </Link>

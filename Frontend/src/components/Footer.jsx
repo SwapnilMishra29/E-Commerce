@@ -3,38 +3,58 @@ import { assets } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
-   
-  const Navigate = useNavigate()
+
+  const navigate = useNavigate()
 
   return (
-    <div>
-      <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
-        <div>
-            <img className='mb-5 w-32' src={assets.logo} alt="" />
-            <p className='w-full md:w-2/3 text-gray-600'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime molestiae deserunt assumenda, non consectetur voluptas ipsam cupiditate consequatur nihil, voluptate, atque saepe recusandae quod. Laboriosam ratione accusantium ex iure ipsa?</p>
-        </div>
-        <div>
-            <p className='text-xl font-medium mb-5'>COMPANY</p>
-            <ul className='flex flex-col gap-1 text-gray-600 cursor-pointer'>
-                <li onClick={()=>Navigate('/')} >HOME</li>
-                <li onClick={()=>Navigate('/about')}>ABOUT US</li>
-                <li onClick={()=>Navigate('/')}>DELIVERY</li>
-                <li onClick={()=>Navigate('/')}>PRIVACY POLICY</li>
+    <footer className='bg-gray-50 mt-40'>
+      <div className='max-w-7xl mx-auto px-6'>
+
+        {/* TOP SECTION */}
+        <div className='grid grid-cols-1 sm:grid-cols-3 gap-14 py-16 text-sm'>
+
+          {/* BRAND */}
+          <div>
+            <img className='mb-5 w-32' src={assets.logo} alt="Forever logo" />
+            <p className='text-gray-600 leading-relaxed md:w-2/3'>
+              Forever is a modern e-commerce platform focused on delivering
+              quality products with a seamless shopping experience. From
+              trending fashion to everyday essentials — we’ve got you covered.
+            </p>
+          </div>
+
+          {/* COMPANY LINKS */}
+          <div>
+            <p className='text-lg font-semibold mb-5'>Company</p>
+            <ul className='flex flex-col gap-2 text-gray-600'>
+              <li onClick={() => navigate('/')} className='hover:text-black cursor-pointer transition'>Home</li>
+              <li onClick={() => navigate('/about')} className='hover:text-black cursor-pointer transition'>About Us</li>
+              <li onClick={() => navigate('/orders')} className='hover:text-black cursor-pointer transition'>Delivery Information</li>
+              <li className='hover:text-black cursor-pointer transition'>Privacy Policy</li>
             </ul>
-        </div>
-        <div>
-            <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
-            <ul className='flex flex-col gap-1 text-gray-600'>
-                <li>+1-212-456-7890</li>
-                <li>contact@foreveryou.com</li>
+          </div>
+
+          {/* CONTACT */}
+          <div>
+            <p className='text-lg font-semibold mb-5'>Get in Touch</p>
+            <ul className='flex flex-col gap-2 text-gray-600'>
+              <li>📞 +1 (212) 456-7890</li>
+              <li>✉️ support@forever.com</li>
+              <li>🕒 Mon – Sat: 9AM – 8PM</li>
             </ul>
+          </div>
+
         </div>
+
+        {/* BOTTOM BAR */}
+        <div className='border-t'>
+          <p className='py-6 text-sm text-center text-gray-500'>
+            © {new Date().getFullYear()} Forever. All rights reserved.
+          </p>
+        </div>
+
       </div>
-      <div>
-        <hr />
-        <p className='py-5 text-sm text-center'>Copyright 2024@ forever.com -All Right Reserve.</p>
-      </div>
-    </div>
+    </footer>
   )
 }
 

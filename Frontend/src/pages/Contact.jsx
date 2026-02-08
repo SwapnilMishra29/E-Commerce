@@ -6,20 +6,54 @@ import NewsLetterBox from '../components/NewsLetterBox'
 const Contact = () => {
   return (
     <div>
+
+      {/* PAGE TITLE */}
       <div className='text-center text-2xl pt-10 border-t'>
-        <Title text1={'CONTACT'} text2={'US'}/>
+        <Title text1={'CONTACT'} text2={'US'} />
       </div>
-      <div className='my-10 flex flex-col justify-center md:flex-row gap-10 mb-28'>
-        <img className='w-full md:max-w-[480]' src={assets.contact_img} alt="" />
-        <div className='flex flex-col justify-center items-start gap-6'>
-          <p className='font-semibold text-xl text-gray-600'>Our Store</p>
-          <p className='text-gray-500'>54701 Williams Station <br /> Suit 350, Washington , USA</p>
-          <p className='text-gray-500'>Tel : (415) 555-0132 <br /> Email:admin@forever.com</p>
-          <p className='font-semibold text-xl text-gray-600'>Careers at Forever</p>
-           <p className='text-gray-500'>Learn More About our teams and job openings.</p>
-          <button className='border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
+
+      {/* CONTACT SECTION */}
+      <div className='my-16 flex flex-col items-center md:flex-row gap-12 mb-28'>
+
+        <img
+          className='w-full md:max-w-[480px] rounded-lg shadow-md'
+          src={assets.contact_img}
+          alt="Contact us"
+        />
+
+        <div className='flex flex-col justify-center items-start gap-6 max-w-md text-gray-600'>
+
+          <div>
+            <p className='font-semibold text-xl text-gray-800'>Our Store</p>
+            <p className='mt-2 text-gray-500'>
+              54701 Williams Station Road <br />
+              Suite 350, Washington, USA
+            </p>
+          </div>
+
+          <div>
+            <p className='text-gray-500'>
+              <span className='font-medium text-gray-700'>Phone:</span> (415) 555-0132 <br />
+              <span className='font-medium text-gray-700'>Email:</span> support@forever.com
+            </p>
+          </div>
+
+          <div className='pt-2'>
+            <p className='font-semibold text-xl text-gray-800'>Careers at Forever</p>
+            <p className='mt-2 text-gray-500'>
+              We’re always looking for passionate people to join our growing
+              team. Explore open roles and build the future of e-commerce with us.
+            </p>
+          </div>
+
+          <button className='mt-2 border border-black px-8 py-3 text-sm font-medium hover:bg-black hover:text-white transition'>
+            Explore Careers
+          </button>
+
         </div>
       </div>
+
+      {/* NEWSLETTER */}
       <NewsLetterBox />
     </div>
   )
