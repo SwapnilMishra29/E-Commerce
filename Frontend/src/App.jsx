@@ -18,7 +18,7 @@ import Verify from './pages/verify'
 
 const App = () => {
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vw]'>
+    <div className='overflow-x-hidden px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vw]'>
       <ToastContainer />
       <Navbar />
       <ScrollToTop />

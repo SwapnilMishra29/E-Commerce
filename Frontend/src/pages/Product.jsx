@@ -12,6 +12,8 @@ const Product = () => {
   const [productData, setProductData] = useState(false)
   const [image,setImage] = useState('');
   const [size, setSize] = useState('')
+  const [activeTab, setActiveTab] = useState('description')
+
 
   const fetchProductData = async () => {
     products.map((item)=>{
@@ -76,16 +78,115 @@ const Product = () => {
 
       {/* -------Desciption and Review section __________________ */}
 
-      <div className='mt-20'>
-        <div className='flex'>
-          <b className='border px-5 py-3 text-sm'>Description</b>
-          <p className='border px-5 py-3 text-sm'>Reviews (122)</p>
+      {/* ------- Description and Review section ------- */}
+<div className='mt-20'>
+  {/* Tabs */}
+  <div className='flex border-b'>
+    <button
+      onClick={() => setActiveTab('description')}
+      className={`px-6 py-3 text-sm font-medium ${
+        activeTab === 'description'
+          ? 'border-b-2 border-black text-black'
+          : 'text-gray-500'
+      }`}
+    >
+      Description
+    </button>
+
+    <button
+      onClick={() => setActiveTab('reviews')}
+      className={`px-6 py-3 text-sm font-medium ${
+        activeTab === 'reviews'
+          ? 'border-b-2 border-black text-black'
+          : 'text-gray-500'
+      }`}
+    >
+      Reviews (3)
+    </button>
+  </div>
+
+  {/* Description */}
+  {activeTab === 'description' && (
+    <div className='px-6 py-6 text-sm text-gray-600 flex flex-col gap-4'>
+      <p>
+        Experience the perfect blend of quality, comfort, and modern design.
+        Crafted with premium materials, this product ensures durability and
+        long-lasting performance.
+      </p>
+      <p>
+        Designed for everyday use, it offers a stylish look while maintaining
+        maximum comfort. Ideal for casual as well as regular wear.
+      </p>
+      <ul className='list-disc pl-5'>
+        <li>Premium quality fabric</li>
+        <li>Soft & breathable material</li>
+        <li>Long-lasting durability</li>
+        <li>Easy to maintain</li>
+      </ul>
+    </div>
+  )}
+
+  {/* Reviews */}
+  {activeTab === 'reviews' && (
+    <div className='px-6 py-6 flex flex-col gap-6'>
+      
+      {/* Review 1 */}
+      <div className='border-b pb-4'>
+        <div className='flex items-center gap-3'>
+          <p className='font-medium'>Rahul Sharma</p>
+          <div className='flex gap-1'>
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_dull_icon} className='w-4' />
+          </div>
         </div>
-        <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat vitae et eos perferendis. Quia velit animi quo aut, sed repudiandae voluptas cum porro, eos vitae maxime repellat iure, soluta eligendi!</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis maxime fugit tempore aperiam odio consequatur facere ut quibusdam, esse quo delectus natus error, corrupti molestias cum recusandae. Inventore, dolore error!</p>
-        </div>
+        <p className='text-sm text-gray-500 mt-2'>
+          Very good quality product. Fabric feels premium and fits perfectly.
+          Totally worth the price.
+        </p>
       </div>
+
+      {/* Review 2 */}
+      <div className='border-b pb-4'>
+        <div className='flex items-center gap-3'>
+          <p className='font-medium'>Anjali Verma</p>
+          <div className='flex gap-1'>
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_dull_icon} className='w-4' />
+            <img src={assets.star_dull_icon} className='w-4' />
+          </div>
+        </div>
+        <p className='text-sm text-gray-500 mt-2'>
+          Nice product but delivery was slightly delayed. Otherwise satisfied
+          with the purchase.
+        </p>
+      </div>
+
+      {/* Review 3 */}
+      <div>
+        <div className='flex items-center gap-3'>
+          <p className='font-medium'>Amit Patel</p>
+          <div className='flex gap-1'>
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_icon} className='w-4' />
+            <img src={assets.star_icon} className='w-4' />
+          </div>
+        </div>
+        <p className='text-sm text-gray-500 mt-2'>
+          Excellent product! Looks exactly like the images. Highly recommended.
+        </p>
+      </div>
+
+    </div>
+  )}
+</div>
+
       
       {/* ___________display related Porducts __________ */}
        <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
